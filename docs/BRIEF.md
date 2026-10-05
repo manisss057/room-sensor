@@ -1,15 +1,8 @@
-# The brief
+# room sensor
 
-Describe the board you want: what it does, the parts it must use, the
-interfaces it exposes, and the constraints that bound the layout.
+A small room sensor that reports temperature and humidity over Wi-Fi.
 
-A hosted `create` run overwrites this file with the brief you typed in the
-console, then works from it.
-
-## What makes a brief usable
-
-- **Parts** by designator where you care, and by function where you do not.
-- **Power**: what comes in, what rails come out, and how much current.
-- **Interfaces**: every connector and bus, and what is on it.
-- **Constraints**: layer count, board outline, assembly method, and anything
-  the board must not do.
+Parts: ESP32-C6-WROOM-1 module, SHT41 for temperature and humidity, a USB-C receptacle for power and flashing, one addressable status LED, and a tactile button on BOOT.
+Power: USB-C 5 V to 3V3 through an LDO, no battery.
+Interfaces: I2C to the SHT41, USB-C data to the module's native USB pins, a 4-pin debug header exposing UART.
+Constraints: two layers, under 50 by 50 mm, all parts on the top side, JLCPCB basic parts where possible, and keep the antenna keepout clear of copper.
